@@ -35,10 +35,23 @@ public class LoginStepsDefination extends TestBase{
 	
 	@When("User clicks on {string}")
 	public void user_clicks_on(String string) {
-	  loginpage.clickSignInButton();
-	   loginpage.clickBankAndCash();
-	   loginpage.clickNewAccount();
-	   loginpage.clickSubmitButton();
+		if ("clickSignInButton".equals(string)) {
+		    loginpage.clickSignInButton();
+
+		} else if ("clickBankAndCash".equals(string)) {
+		    loginpage.clickBankAndCash();
+
+		} else if ("clickNewAccount".equals(string)) {
+		    loginpage.clickNewAccount();
+
+		} else if ("clickSubmitButton".equals(string)) {
+		    loginpage.clickSubmitButton();
+
+		} else {
+		    // Handle unexpected input or provide an appropriate fallback
+		    System.out.println("Invalid action: " + string);
+		}
+
 	}
 
 	@Then("User should land on Dashboard page")
@@ -49,14 +62,36 @@ public class LoginStepsDefination extends TestBase{
 	
 	@Then("User enters {string} in the {string} field in accounts page")
 	public void user_enters_in_the_field_in_accounts_page(String string, String string2) {
-	    loginpage.AccountTitle.sendKeys(string +  generateRandomNum(999));
-	    loginpage.Description.sendKeys(string+  generateRandomNum(9999));
-	    loginpage.InitialBalance.sendKeys(string+  generateRandomNum(9999));
-	    loginpage.AccountNumber.sendKeys(string+  generateRandomNum(9999));
-	    loginpage.ContactPerson.sendKeys(string);
-	    loginpage.Phone.sendKeys(string+  generateRandomNum(9999));
-	    loginpage.InternetBankingUrl.sendKeys(string);
+	   
+		
+		
 	
+	
+	if ("AccountTitle".equals(string)) {
+	    loginpage.AccountTitle.sendKeys(string + generateRandomNum(999));
+
+	} else if ("Description".equals(string)) {
+	    loginpage.Description.sendKeys(string + generateRandomNum(9999));
+
+	} else if ("InitialBalance".equals(string)) {
+	    loginpage.InitialBalance.sendKeys(string + generateRandomNum(9999));
+
+	} else if ("AccountNumber".equals(string)) {
+	    loginpage.AccountNumber.sendKeys(string + generateRandomNum(9999));
+
+	} else if ("ContactPerson".equals(string)) {
+	    loginpage.ContactPerson.sendKeys(string);
+
+	} else if ("Phone".equals(string)) {
+	    loginpage.Phone.sendKeys(string + generateRandomNum(9999));
+
+	} else if ("InternetBankingUrl".equals(string)) {
+	    loginpage.InternetBankingUrl.sendKeys(string);
+
+	} else {
+	    // Handle unexpected input or provide an appropriate fallback
+	    System.out.println("Invalid field name: ");
+	}
 	}
 
 

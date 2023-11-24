@@ -24,5 +24,8 @@ Scenario Outline: User should be able to login with valid credentials
 	Then User should be able to validate account created successfully
 	
 	Examples: 
-	|username|password|Dashboard|accountTitle|description|initialBalance|accountNumber|contactPerson|Phone|internetBankingURL|
-	|demo1@codefios.com|abc123|dashboard|techfios|TF testing by manoj|9999|1111|phuyaManoj|6823758443|phuyalmanoj@higerdimension.com|
+	|username|password|Dashboard|accountTitle|description|initialBalance|accountNumber|contactPerson|Phone|internetBankingURL| clickSignInButton |clickBankAndCash  |clickNewAccount   |clickSubmitButton |
+	|demo1@codefios.com|abc123|dashboard|techfios|TF testing by manoj|9999|1111|phuyaManoj|6823758443|phuyalmanoj@higerdimension.com |clickSignInButton |clickBankAndCash  |clickNewAccount   |clickSubmitButton |
+	
+     
+ 
